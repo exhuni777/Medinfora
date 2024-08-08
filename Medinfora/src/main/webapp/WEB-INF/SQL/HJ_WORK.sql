@@ -620,3 +620,20 @@ from
         order by to_date(checkin,'yyyy-mm-dd hh24:mi:ss')
 )
 where rownum =1
+
+-- === 메인 공지사항 인덱스 === --
+select nidx,userid,TITLE,CONTENT,VIEWCNT,WRITEDAY
+from (
+    select rownum AS rno,nidx,userid,TITLE,CONTENT,VIEWCNT,WRITEDAY
+    from NOTICE
+    order by NIDX desc
+) where rno between 1 and 3
+
+select *
+from tab;
+
+-- === 휴지통 테이블 삭제 === --
+PURGE TABLE "BIN$8e7sX8kZQ4SPOZ+O5VNgtg==$0";
+
+-- === 휴지통 비우기 === --
+PURGE RECYCLEBIN;

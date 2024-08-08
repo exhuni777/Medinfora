@@ -79,10 +79,10 @@ a {
 /* 성심 promo_section Start  */
 
 .sim_promo_section {
-	    padding-top: 5rem;
+	padding-top: 5rem;
     padding-bottom: 5rem;
     display: flex;
-    max-width: 1680px;
+    max-width: 1412px;
     margin: 40px auto;
     align-items: center;
     justify-content: space-around;
@@ -101,7 +101,7 @@ a {
 
 .sim_promo_section_banner img {
 	max-width: 100%;
-    height: 52vh;
+    height: 58vh;
     border-radius: 11px;
 }
 

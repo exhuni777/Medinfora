@@ -322,7 +322,7 @@
 			select row_number() over(order by viewcount desc) AS rno
 			  ,qidx, title, viewCount
 			from mediq
-			where acount > 0 and open = 1
+			where acount &gt; 0 and open = 1
 		)
 		SELECT qidx, title, viewCount 
 		FROM Q

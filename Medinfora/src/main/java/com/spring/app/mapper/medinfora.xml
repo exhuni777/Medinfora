@@ -143,18 +143,18 @@
 		SELECT userid, email, name, address, detailAddress, birthday, mobile, gender, registerday, midx
 			   , loginmethod
 		       , pwdUpdategap
-		       , NVL(lastlogingap, trunc(months_between(sysdate, registerday) )) AS lastlogingap
+		       , NVL(lastlogingap, trunc(months_between(sysdate, to_date(registerday, 'YYYYMMDD')))) AS lastlogingap
 		FROM (
 		    select userid, email, name, address, detailAddress, birthday, mobile, gender, registerday, midx
 		           , loginmethod
-		           , trunc( months_between(sysdate, pwdupdateday) ) as pwdUpdategap
+		           , trunc( months_between(sysdate, to_date(pwdupdateday, 'YYYYMMDD')) ) AS pwdUpdategap
 		    from member
 		    where userid = #{userid}
 		    <if test="loginmethod == 0">	<!-- 일반로그인 -->
 		    		and pwd = #{pwd}
 	    	</if>
 		) cross join (
-		    select trunc(months_between(sysdate,max(to_date(REGISTERDAY,'YYYY-MM-DD HH24:MI:SS')))) as lastlogingap
+		    select trunc(months_between(sysdate,max(to_date(REGISTERDAY,'YYYY-MM-DD HH24:MI:SS')))) AS lastlogingap
 		    from loginlog
 		    where userid = #{userid}
 		)

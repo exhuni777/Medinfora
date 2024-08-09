@@ -11,7 +11,7 @@
 	<!-- ==== #15. myBatis(JDBC)설정 연결문자열 설정하기  ==== -->
    	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
       	<property name="driverClassName" value="net.sf.log4jdbc.DriverSpy" />
-      	<property name="url" value="jdbc:log4jdbc:oracle:thin:@//211.238.142.195:1521/xe" />	<!-- DB IP -->
+      	<property name="url" value="jdbc:log4jdbc:oracle:thin:@//127.0.0.1:1521/xe" />	<!-- DB IP -->
       	<property name="username" value="final_orauser3" />		<!-- DB 이름 -->
       	<property name="password" value="gclass" />			<!-- DB 비밀번호 -->
       

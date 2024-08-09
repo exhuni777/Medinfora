@@ -356,13 +356,30 @@ public class CommuController {
 	    CommuBoardDTO cbdto = null;
 	    List<CommuFilesDTO> fileList = null;
 
-	    if (cidx != null) {
-	        // 조회수 증가랑 같이 글 하나 보기
+	    BookmarkDTO bdto = new BookmarkDTO();
+
+	    //세션에 로그인한 유저아이디 가져오기
+		HttpSession session = request.getSession();
+		MemberDTO loginuser = (MemberDTO)session.getAttribute("loginuser");
+
+
+		int alreadyBookmark = 0;
+
+		if(loginuser != null) {
+			//로그인유저아이디, cidx 를 bdto 에 넣어준다.
+			bdto.setUserid(loginuser.getUserid());
+			bdto.setCidx(cidx);
+			alreadyBookmark = service.alreadyMarking(bdto); //북마크 되어있는지 여부, cidx
+			// 안되어있다면 0, 되어있다면 1 
+		}
+	    if (cidx != null) {	
+	    	// 조회수 증가랑 같이 글 하나 보기
 	        cbdto = service.getCommuDetail(cidx);
 	        // 첨부파일 가져오기
 	        fileList = service.getAttachfiles(cidx);
 	    }
 
+	    mav.addObject("alreadyBookmark", alreadyBookmark);
 	    mav.addObject("cbdto", cbdto);
 	    mav.addObject("fileList", fileList);
 	    mav.addObject("currentShowPageNo", currentShowPageNo);
@@ -782,7 +799,7 @@ public class CommuController {
 
 		alreadyBookmark = service.alreadyMarking(bdto);
 		
-		if(alreadyBookmark != 1) {
+		if(alreadyBookmark < 1) {
 			n = service.bookmarkPost(bdto);
 		}
 		

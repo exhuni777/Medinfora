@@ -40,11 +40,11 @@
       <div class="sim_promo_section_service_links">
         <a href="<%=ctxPath%>/hpsearch/hospitalSearch.bibo">
           <div class="icon"><span>🏥</span></div>
-          <span class="nanum-b size-s">병원찾기</span>
+          <span class="nanum-b size-s">병원 찾기</span>
         </a>
         <a href="<%=ctxPath %>/reserve/choiceDr.bibo">
           <div class="icon"><span>🖊️</span></div>
-          <span class="nanum-b size-s">진료예약</span>
+          <span class="nanum-b size-s">진료 예약</span>
         </a>
         <a href="<%=ctxPath %>/commu/commuList.bibo">
           <div class="icon"><span>👪</span></div>

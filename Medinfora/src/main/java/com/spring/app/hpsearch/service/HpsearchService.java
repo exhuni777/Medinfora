@@ -16,7 +16,7 @@ public interface HpsearchService {
 
 	List<String> putSiGetdo(String local);
 
-	int holidatCheck(LocalDate currentDate);
+	int holidatCheck(String currentDate_str);
 
 	List<Map<String, String>> getChartPercentage(Map<String, String> paraMap);
 	

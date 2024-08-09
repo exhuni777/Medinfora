@@ -40,9 +40,9 @@ public class HpsearchService_imple implements HpsearchService {
 	}
 
 	@Override
-	public int holidatCheck(LocalDate currentDate) {
+	public int holidatCheck(String currentDate_str) {
 		// TODO Auto-generated method stub
-		return hsdao.holidatCheck(currentDate);
+		return hsdao.holidatCheck(currentDate_str);
 	}
 
 	@Override

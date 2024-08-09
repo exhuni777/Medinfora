@@ -21,7 +21,7 @@ public interface HpsearchDAO {
 	//시를 넣어서 도 불러오기
 	List<String> putSiGetdo(String local);
 
-	int holidatCheck(LocalDate currentDate);
+	int holidatCheck(String currentDate_str);
 
 	List<Map<String, String>> getChartPercentage(Map<String, String> paraMap);
 	

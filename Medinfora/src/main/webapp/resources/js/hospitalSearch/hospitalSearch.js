@@ -22,7 +22,8 @@ $(function() {
 	});
     */
     // 로딩 이미지 숨기기
-    $("div#loaderArr").hide();     
+    $("div#loaderArr").hide();   
+    $("div#hp_chart").hide();       
 
     $('#closeModalButton').click(function(){
         $('#hospitalDetailModal').modal('hide');
@@ -564,8 +565,8 @@ function displayPagination(totalPage, currentPage) {
 
 function createChart(param) {
     // 차트를 표시할 DOM 요소를 가져옴
+    $("div#hp_chart").show();   
     var dom = document.getElementById('hp_chart');
-
     // ECharts 인스턴스를 초기화
     var myChart = echarts.init(dom, null, {
         renderer: 'canvas',

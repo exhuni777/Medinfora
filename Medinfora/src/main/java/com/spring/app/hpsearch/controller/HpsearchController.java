@@ -93,8 +93,9 @@ public class HpsearchController {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HHmm");
 
 		int int_currentTime = Integer.parseInt(currentTime.format(formatter));
+		String currentDate_str = String.valueOf(currentDate); 
 
-		int n = service.holidatCheck(currentDate);
+		int n = service.holidatCheck(currentDate_str);
 
 		if (n > 0) {
 			str_dayOfWeek = "공휴일";

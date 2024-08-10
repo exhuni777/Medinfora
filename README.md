@@ -41,3 +41,8 @@
 - Test : 테스트 코드 추가/수정
 - Merge : 코드병합
 - Temp : 임시저장
+
+---
+
+# 💡 회의록
+링크 : https://docs.google.com/spreadsheets/d/1w-4BNe0d3nZqqTHUmedyV9EedpcsR-5A7Cu_tY-JBGc/edit?gid=2044481765#gid=2044481765
